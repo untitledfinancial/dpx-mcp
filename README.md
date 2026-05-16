@@ -4,7 +4,7 @@
 [![npm version](https://badge.fury.io/js/%40untitledfinancial%2Fdpx-mcp.svg)](https://www.npmjs.com/package/@untitledfinancial/dpx-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**AI-native infrastructure for institutional finance.** DPX exposes a 10-layer intelligence oracle and a compliance-grade cross-border settlement rail as a single MCP server - any AI agent can read macro signals, score ESG counterparty risk, and execute settlements with no human in the loop.
+**AI-native infrastructure for institutional finance.** DPX exposes a 10+ layer intelligence oracle and a compliance-grade cross-border settlement rail as a single MCP server - any AI agent can read macro signals, score ESG counterparty risk, and execute settlements with no human in the loop.
 
 **13 tools** | **Base mainnet** | **GENIUS Act + MiCA + Basel III** | **x402 pay-per-call**
 
@@ -56,7 +56,7 @@ Install once, use from any MCP-compatible host (Claude Desktop, Cursor, n8n, cus
 | `get_quote` | Binding fee quote (300s TTL) - all-in rate with live ESG adjustment |
 | `get_esg_score` | Live ESG score for a wallet address - hourly from 6 institutional sources |
 | `get_reliability` | Oracle stability status - STABLE / CAUTION / UNSTABLE |
-| `get_oracle_status` | Full 10-layer Stability Oracle v9.0 output - all tier scores, alerts, chaos regime flag, AI briefing |
+| `get_oracle_status` | Full 10+ layer Stability Oracle v9.0 output - all tier scores, alerts, chaos regime flag, AI briefing |
 | `get_fee_schedule` | Complete fee table with volume tiers and competitive benchmarks |
 | `verify_fees` | Confirm off-chain quote matches on-chain DPXSettlementRouter |
 | `compare_to_competitors` | DPX vs Stripe, Wise, SWIFT, bank wire - dollar savings per transaction |
@@ -114,7 +114,7 @@ npx @smithery/cli install @untitledfinancial/dpx-mcp --client claude
 ```
 Agent: settle $2M USD ‚Üí EUR for 0xRecipient...
 
-get_oracle_status   ‚Üí 10-layer signal check - score 81, STABLE, no chaos regime
+get_oracle_status   ‚Üí 10+ layer signal check - score 81, STABLE, no chaos regime
 get_esg_score       ‚Üí counterparty ESG tier confirmed (score 74 ‚Üí 0.15% ESG fee)
 get_quote           ‚Üí $27,700 all-in at 1.385%, quoteId valid 300s
 verify_fees         ‚Üí on-chain fee matches off-chain quote ‚úì
@@ -132,7 +132,7 @@ AI reads earth-systems ‚Üí AMOC proximity HIGH ‚Üí long-horizon risk mod
 
 ## Oracle architecture
 
-The 10-layer Stability Oracle v9.0 underpins both the intelligence product and the settlement rail:
+The 10+ layer Stability Oracle v9.0 underpins both the intelligence product and the settlement rail:
 
 | Layer | Signal |
 |-------|--------|
