@@ -1,6 +1,6 @@
 # DPX Intelligence API
 
-Standalone per-call data product ‚Äî a separate Cloudflare Worker from the Stability Oracle. All endpoints use the [x402 protocol](https://x402.org) ‚Äî USDC on Base mainnet, per-call pricing. No subscriptions, no API keys.
+Standalone per-call data product - a separate Cloudflare Worker from the Stability Oracle. All endpoints use the [x402 protocol](https://x402.org) - USDC on Base mainnet, per-call pricing. No subscriptions, no API keys.
 
 **Worker:** `intelligence-worker/` (this repo)
 **Stability Oracle:** `stability-oracle/worker/` (separate worker, separate deploy)
@@ -24,7 +24,7 @@ Asset: USDC (`0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`) on Base mainnet.
 
 ## Endpoints
 
-### `GET /intelligence` ‚Äî $0.10/call
+### `GET /intelligence` - $0.10/call
 
 **AI synthesis over 32+ real-time signals**
 
@@ -49,16 +49,16 @@ X-DPX-Tier: <STABLE | WATCH | STRESSED | CRITICAL>
 
 ---
 
-### `GET /intelligence/climate` ‚Äî $0.25/call ¬∑ 24h cache
+### `GET /intelligence/climate` - $0.25/call | 24h cache
 
 **Structural precipitation shift analysis across 10 global agricultural production zones**
 
-Compares recent 3-year precipitation (2021‚Äì2023) against a 1972‚Äì1974 baseline using ERA5 reanalysis data via Open-Meteo. Maps anomalies to commodity exposure, food system cascade risk, migration pressure, and basket currency implications.
+Compares recent 3-year precipitation (2021-2023) against a 1972-1974 baseline using ERA5 reanalysis data via Open-Meteo. Maps anomalies to commodity exposure, food system cascade risk, migration pressure, and basket currency implications.
 
 **Data sources**
 | Source | Data | Update cadence |
 |---|---|---|
-| Open-Meteo Historical Archive (ERA5) | Monthly precipitation 1940‚Äìpresent | Annual reanalysis |
+| Open-Meteo Historical Archive (ERA5) | Monthly precipitation 1940-present | Annual reanalysis |
 
 **Agricultural regions covered**
 | Region | Key commodities |
@@ -113,19 +113,19 @@ X-DPX-Generated: <ISO timestamp>
 
 ---
 
-### `GET /intelligence/earth-systems` ‚Äî $0.50/call ¬∑ 48h cache
+### `GET /intelligence/earth-systems` - $0.50/call | 48h cache
 
-**Planetary health dashboard with 50‚Äì100 year historical context**
+**Planetary health dashboard with 50-100 year historical context**
 
-Pulls live atmospheric, cryosphere, and ocean data from NASA, NOAA, and NSIDC. Computes an Earth Health Index (0‚Äì100, where 100 = pre-industrial health) and assesses proximity to 9 known climate tipping points through a sustainability lens.
+Pulls live atmospheric, cryosphere, and ocean data from NASA, NOAA, and NSIDC. Computes an Earth Health Index (0-100, where 100 = pre-industrial health) and assesses proximity to 9 known climate tipping points through a sustainability lens.
 
 **Data sources**
 | Source | Data | Coverage |
 |---|---|---|
-| NOAA GML ‚Äî Mauna Loa (`co2_mm_mlo.txt`) | Atmospheric CO‚ÇÇ (ppm) | 1958‚Äìpresent |
-| NOAA GML ‚Äî Global CH‚ÇÑ (`ch4_mm_gl.txt`) | Atmospheric methane (ppb) | 1983‚Äìpresent |
-| NASA GISTEMP v4 (`GLB.Ts+dSST.txt`) | Global surface temp anomaly | 1880‚Äìpresent |
-| NSIDC Sea Ice Index v3.0 (`N_09_extent_v3.0.csv`) | Arctic September minimum extent | 1979‚Äìpresent |
+| NOAA GML - Mauna Loa (`co2_mm_mlo.txt`) | Atmospheric CO‚ÇÇ (ppm) | 1958-present |
+| NOAA GML - Global CH‚ÇÑ (`ch4_mm_gl.txt`) | Atmospheric methane (ppb) | 1983-present |
+| NASA GISTEMP v4 (`GLB.Ts+dSST.txt`) | Global surface temp anomaly | 1880-present |
+| NSIDC Sea Ice Index v3.0 (`N_09_extent_v3.0.csv`) | Arctic September minimum extent | 1979-present |
 | Open-Meteo Marine API | SST proxy (North Atlantic 30¬∞N 45¬∞W) | Real-time |
 
 **Earth Health Index composition**
@@ -141,7 +141,7 @@ Pulls live atmospheric, cryosphere, and ocean data from NASA, NOAA, and NSIDC. C
 | Tipping point | Threshold | Cascade risk |
 |---|---|---|
 | Greenland Ice Sheet | +1.5¬∞C sustained | Sea level +7m |
-| West Antarctic Ice Sheet | +1.5‚Äì2.0¬∞C | Sea level +3.3m |
+| West Antarctic Ice Sheet | +1.5-2.0¬∞C | Sea level +3.3m |
 | Amazon dieback | 20-25% deforestation + drought | Global carbon store collapse |
 | AMOC (Atlantic circulation) | Freshwater flux + temp | EU cooling, monsoon shift |
 | Permafrost carbon feedback | +2¬∞C Arctic | Irreversible CH‚ÇÑ release |
@@ -206,7 +206,7 @@ Each tipping point returns: `proximityRisk` (BREACHED / IMMINENT / HIGH / MODERA
       "name": "Arctic Summer Sea Ice",
       "proximityRisk": "IMMINENT",
       "threshold": "+1.5¬∞C",
-      "currentStatus": "1.29¬∞C ‚Äî threshold crossed in hot years",
+      "currentStatus": "1.29¬∞C - threshold crossed in hot years",
       "timeHorizon": "2030-2040",
       "cascadeRisk": "Albedo feedback accelerates warming; opens Arctic shipping lanes permanently"
     },
@@ -252,20 +252,20 @@ X-DPX-Generated: <ISO timestamp>
 
 ## Additional endpoints
 
-### `GET /intelligence/macro-stress` ‚Äî $0.15/call ¬∑ 1h cache
+### `GET /intelligence/macro-stress` - $0.15/call | 1h cache
 
 **Credit regime classification across spread, volatility, and lending signals**
 
-Synthesizes FRED credit series into a unified stress index and regime label. Provides lead signals for tightening/easing cycles that precede FX and commodity moves by 2‚Äì6 weeks.
+Synthesizes FRED credit series into a unified stress index and regime label. Provides lead signals for tightening/easing cycles that precede FX and commodity moves by 2-6 weeks.
 
 **Data sources**
 | Source | Series | Signal |
 |---|---|---|
-| FRED | BAMLC0A0CM ‚Äî Investment-grade OAS | Credit risk premium |
-| FRED | BAMLH0A0HYM2 ‚Äî High-yield OAS | Junk spread, risk appetite |
-| FRED | TEDRATE ‚Äî TED spread | Interbank funding stress |
-| FRED | VIXCLS ‚Äî CBOE VIX | Equity volatility regime |
-| FRED | DRTSCILM ‚Äî C&I loan tightening | Bank credit availability |
+| FRED | BAMLC0A0CM - Investment-grade OAS | Credit risk premium |
+| FRED | BAMLH0A0HYM2 - High-yield OAS | Junk spread, risk appetite |
+| FRED | TEDRATE - TED spread | Interbank funding stress |
+| FRED | VIXCLS - CBOE VIX | Equity volatility regime |
+| FRED | DRTSCILM - C&I loan tightening | Bank credit availability |
 
 **Response shape**
 ```json
@@ -289,7 +289,7 @@ Synthesizes FRED credit series into a unified stress index and regime label. Pro
 
 ---
 
-### `GET /intelligence/supply-chain` ‚Äî $0.25/call ¬∑ 6h cache
+### `GET /intelligence/supply-chain` - $0.25/call | 6h cache
 
 **Global shipping lane and goods pipeline bottleneck scoring**
 
@@ -298,7 +298,7 @@ Combines NY Fed Global Supply Chain Pressure Index with live shipping water leve
 **Data sources**
 | Source | Data | Coverage |
 |---|---|---|
-| NY Fed GSCPI | Global supply chain pressure (z-score) | 1997‚Äìpresent |
+| NY Fed GSCPI | Global supply chain pressure (z-score) | 1997-present |
 | WSV Pegelonline | Rhine/Kaub water level (cm) | Real-time |
 | USGS NWIS | Mississippi/Memphis gauge | Real-time |
 | Open-Meteo | Panama Canal Gatun watershed precipitation proxy | Real-time |
@@ -329,9 +329,9 @@ Combines NY Fed Global Supply Chain Pressure Index with live shipping water leve
 
 ---
 
-### `GET /intelligence/energy-transition` ‚Äî $0.25/call ¬∑ 24h cache
+### `GET /intelligence/energy-transition` - $0.25/call | 24h cache
 
-**Structural energy shift intelligence ‚Äî renewables, grid carbon, fossil demand curve**
+**Structural energy shift intelligence - renewables, grid carbon, fossil demand curve**
 
 Tracks the pace of the energy transition using EIA generation data, grid carbon intensity proxies, and fossil fuel demand curve signals. Provides structural context for energy price forecasting beyond spot prices.
 
@@ -361,7 +361,7 @@ Tracks the pace of the energy transition using EIA generation data, grid carbon 
 
 ---
 
-### `GET /intelligence/esg/:address` ‚Äî $0.25/call ¬∑ 6h cache
+### `GET /intelligence/esg/:address` - $0.25/call | 6h cache
 
 **Entity-level ESG score for a given legal entity (Ethereum address or LEI)**
 
@@ -408,9 +408,9 @@ npm run kv:create
 # ‚Üí Copy both IDs into wrangler.toml (id and preview_id)
 
 # 3. Set secrets
-wrangler secret put FEE_COLLECTOR_ADDRESS   # Base mainnet wallet ‚Äî receives USDC payments
-wrangler secret put FRED_API_KEY            # fred.stlouisfed.org ‚Äî free tier (macro-stress)
-wrangler secret put EIA_API_KEY             # eia.gov ‚Äî free tier (energy-transition)
+wrangler secret put FEE_COLLECTOR_ADDRESS   # Base mainnet wallet - receives USDC payments
+wrangler secret put FRED_API_KEY            # fred.stlouisfed.org - free tier (macro-stress)
+wrangler secret put EIA_API_KEY             # eia.gov - free tier (energy-transition)
 
 # 4. Deploy
 wrangler deploy
@@ -437,7 +437,7 @@ curl https://intelligence.untitledfinancial.com/intelligence/earth-systems
     "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
     "payTo": "0x...",
     "resource": "https://intelligence.untitledfinancial.com/intelligence/earth-systems",
-    "description": "DPX Earth Systems Intelligence ‚Äî ..."
+    "description": "DPX Earth Systems Intelligence - ..."
   }]
 }
 ```
