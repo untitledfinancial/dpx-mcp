@@ -1,0 +1,40 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.untitledfinancial/dpx",
+  "title": "DPX ‚Äî Institutional Cross-Border Settlement",
+  "description": "AI-native intelligence oracle and institutional settlement rail. 10-layer Stability Oracle (climate, macro, FX, ESG, supply chain, earth systems) with x402 pay-per-call data API. Cross-border settlement at 1.385% all-in via Base mainnet. GENIUS Act + MiCA + Basel III compliant.",
+  "version": "2.4.2",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@untitledfinancial/dpx-mcp",
+      "version": "2.4.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [],
+      "environmentVariables": [
+        {
+          "name": "STABILITY_ORACLE_URL",
+          "description": "Override the Stability Oracle URL (default: https://stability.untitledfinancial.com)",
+          "required": false
+        },
+        {
+          "name": "SETTLEMENT_AGENT_URL",
+          "description": "Override the Settlement Agent URL (default: https://agent.untitledfinancial.com)",
+          "required": false
+        },
+        {
+          "name": "INTELLIGENCE_URL",
+          "description": "Override the Intelligence API URL (default: https://api.untitledfinancial.com/intelligence)",
+          "required": false
+        },
+        {
+          "name": "SANDBOX_MODE",
+          "description": "Set to 'false' for live on-chain settlement (default: true)",
+          "required": false
+        }
+      ]
+    }
+  ]
+}
