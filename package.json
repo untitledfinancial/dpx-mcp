@@ -1,0 +1,40 @@
+{
+  "name": "@untitledfinancial/dpx-mcp",
+  "version": "2.4.2",
+  "mcpName": "io.github.untitledfinancial/dpx",
+  "description": "AI-native intelligence oracle and institutional settlement rail — MCP server for AI agents. 10+ layer Stability Oracle (climate, macro, FX, ESG, supply chain, earth systems) + x402 pay-per-call intelligence API + cross-border settlement at 1.385% all-in via Base mainnet. 13 tools: macro briefing, ESG scoring, quote, settle, oracle status, competitor comparison, investment memo, and more.",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "dpx-mcp": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "settlement",
+    "cross-border",
+    "payments",
+    "fintech",
+    "base",
+    "usdc",
+    "treasury",
+    "esg",
+    "stablecoin",
+    "ai-agent"
+  ],
+  "author": "Untitled Financial <case@untitledfinancial.com>",
+  "license": "MIT",
+  "homepage": "https://mcp.untitledfinancial.com",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "axios": "^1.13.2",
+    "zod": "^3.22.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

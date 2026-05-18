@@ -1,0 +1,34 @@
+{
+  "_setup": [
+    "1. cd /Users/victoriacase/Documents/GitHub/dpx-protocol/dpx-mcp && npm install",
+    "2. Copy the mcpServers block into: ~/Library/Application Support/Claude/claude_desktop_config.json",
+    "3. Restart Claude Desktop",
+    "4. DPX appears in MCP toolbar with 10 tools: get_manifest, get_quote, get_esg_score, get_reliability, get_oracle_status, get_fee_schedule, verify_fees, compare_to_competitors, settle, get_settlement_status"
+  ],
+  "_paths": {
+    "mac":     "~/Library/Application Support/Claude/claude_desktop_config.json",
+    "windows": "%APPDATA%\\Claude\\claude_desktop_config.json",
+    "linux":   "~/.config/Claude/claude_desktop_config.json"
+  },
+
+  "mcpServers": {
+    "dpx": {
+      "command": "node",
+      "args": ["/Users/victoriacase/Documents/GitHub/dpx-protocol/dpx-mcp/index.js"],
+      "env": {
+        "STABILITY_ORACLE_URL": "https://stability.untitledfinancial.com",
+        "SETTLEMENT_AGENT_URL": "https://agent.untitledfinancial.com",
+        "SANDBOX_MODE": "true"
+      }
+    }
+  },
+
+  "_local_dev": {
+    "_note": "Use this env block instead when running Settlement Agent locally (wrangler dev)",
+    "env": {
+      "STABILITY_ORACLE_URL": "https://stability.untitledfinancial.com",
+      "SETTLEMENT_AGENT_URL": "http://localhost:8787",
+      "SANDBOX_MODE": "true"
+    }
+  }
+}
